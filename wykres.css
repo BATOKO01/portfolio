@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #033b52;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.conteiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+}
+
+.chart{
+    padding:  2rem;
+    border: 1px solid #f49131 ;
+    border-radius: 1rem;
+    background: #1c1f35;
+    box-shadow:  0 0 16px rgba(0,0,0,0.8);
+}
+
+.conteiner h1{
+    font-size: 56px;
+    margin-top: 20px;
+    font-size: 24px;
+    text-align: center;
+    color: #00abf0;
+}
+
+
+/* NAV BAR */
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    /* background-color: rgba(0, 0, 0, .1); */
+    /* backdrop-filter: blur(50px); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+    transition: .5s;
+}
+
+.header:hover::after {
+    left: 100%;
+}
+
+.logo{
+    position: relative;
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    /* background: red; */
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+}
+.navbar a {
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: #00abf0;
+}
+
+#check {
+    display: none;
+}
+
+.icons{
+    position: relative;
+    right: 5%;
+    font-size: 2.8rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    
+}
+
+@media (max-width: 992px){
+    .header{
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width: 768px){
+    .icons {
+        display: inline-flex;
+    }
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+    .icons #close-icon {
+        display: none;
+    }
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background:rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        overflow: hidden;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar {
+        /* height: 17.7rem; */
+        height: 24rem;
+    }
+    .navbar a {
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar a {
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: calc(.15s * var(--i));
+    }
+
+    .login-button {
+        /* display: inline-flex; */
+        /* width: 20%;
+        left: 50%; */
+        width: 100%; 
+    }
+
+    
+}
+
+@keyframes showRight {
+    100% {
+       width: 0; 
+    }
+}
+
+/* LOGIN BUTTON */
+.login1 button {
+    display: inline-block;
+    font-size: 24px;
+    letter-spacing:  1.6px;
+    color: rgba(255, 255, 255, .4);
+    background: #111;
+    padding: 10px 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 10px;
+    transition:  .8s;
+    border: none;
+    margin-top: 25px;
+}
+
+.login1 button:hover {
+    color: #00abf0;
+    text-shadow: 0 0 5px #00abf0;
+    box-shadow: 
+        0 0 10px #00abf0,
+        0 0 20px #00abf0,
+        0 0 40px #00abf0,
+        0 0 80px #00abf0,
+        0 0 160px #00abf0;
+    letter-spacing: 4px;
+}
+
+.login-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00abf0;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    
+    
+}
+
+.login-button:hover {
+    background-color: #081b29;
+}
+

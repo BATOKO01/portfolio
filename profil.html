@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/news.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Edycja Profilu</title>
+</head>
+<body>
+
+    <header class="header">
+        
+
+            
+        <a href="index.html" class="logo">Batoko</a>
+        
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-x' id="close-icon"></i>
+        </label>
+
+        <nav class="navbar">
+            <a href="index2.html#home-section" class="active">Home</a>
+            <a href="index2.html#about-section" style="--i:0;">About</a>
+            <a href="index2.html#news-section" style="--i:1;">News</a>
+            <a href="index2.html#team-section" style="--i:2;">Team</a>
+            <a href="index2.html#contact-section" style="--i:3;">Contact</a>
+            <a href="reports.html" style="--i:4;">Stats</a>
+            <a href="index.html" style="--i:5;" class="login-button login-button center">Logout</a>
+        </nav>
+
+</header>
+
+
+
+
+
+
+
+<section class="profile-section">
+    <div class="profile-box">
+        <h2>Edycja Profilu</h2>
+        <form id="profile-form">
+            <div class="form-group">
+                
+                <input type="text" id="firstName" name="firstName" placeholder="Twoje imię" class="item">
+            </div>
+            <div class="form-group">
+                
+                <input type="text" id="lastName" name="lastName" placeholder="Twoje nazwisko" class="item">
+            </div>
+            <div class="form-group">
+                
+                <input type="email" id="email" name="email" placeholder="Twój email" class="item">
+            </div>
+            <div class="form-group">
+              
+                <input type="tel" id="phone" name="phone" placeholder="Twój numer telefonu" class="item">
+            </div>
+            <div class="form-group">
+                <label for="profileImage" class="custom-file-upload">Zdjęcie:</label>
+                <input type="file" id="profileImage" name="profileImage">
+            </div>
+            <div class="form-group">
+               
+                <textarea id="bio" name="bio" placeholder="Dodaj krótką notatkę bio" class="item"></textarea>
+            </div>
+            <button type="submit" class="button">Zapisz zmiany</button>
+        </form>
+    </div>
+</section>
+
+</body>
+</html>
